@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FINDHERO</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Fondo animado -->
+  <video autoplay muted loop class="background-video">
+    <source src="./assets/background.mp4" type="video/mp4">
+  </video>
+
+  <header>
+    <img src="./assets/logo.png" alt="SuperHero ADA" class="logo">
+    <div id="darkModeToggle" class="dark-mode-btn" title="Toggle Dark/Light Mode">
+      🌙
+    </div>
+  </header>
+  
+
+  <!-- Introducción -->
+  <section class="intro">
+    <h1>Welcome to the Multiverse</h1>
+    <p>Find and create a list of your favorites superheroes</p>
+  </section>
+
+<!-- Buscador -->
+<section class="search">
+  <input type="text" id="searchInput" placeholder="Find A Hero...">
+  <select id="sortSelect">
+    <option value="asc">A-Z</option>
+    <option value="desc">Z-A</option>
+  </select>
+  <button id="searchBtn">SEARCH</button>
+</section>
+
+  <!-- Contenedor de tarjetas -->
+  <main id="heroContainer" class="hero-container"></main>
+
+  <!-- Paginación -->
+  <section class="pagination">
+    <button id="firstPage"><<</button>
+    <button id="prevPage"><</button>
+    <select id="pageSelect"></select>
+    <button id="nextPage">></button>
+    <button id="lastPage">>></button>
+    <span id="pageStatus"></span>
+  </section>
+
+ <!-- Favoritos -->
+<section class="favorites-section">
+  <h2>Favorites</h2>
+  <div id="favoritesContainer" class="favorites-container"></div>
+</section>
+
+  <!-- Modal -->
+  <div id="heroModal" class="modal hidden">
+    <div class="modal-content">
+      <button id="closeModal">&times;</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Karla Tovar</p>
+  </footer>
+
+</body>
+</html>
+

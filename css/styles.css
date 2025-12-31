@@ -1,0 +1,217 @@
+/* Fuente */
+* { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+
+/* Fondo animado */
+.background-video {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* Body y transición colores */
+body {
+  margin:0; padding:0;
+  font-family: 'Arial', sans-serif;
+  background-color:#0b0c10;
+  color:white;
+  transition: background 0.5s, color 0.5s;
+}
+
+/* Header y footer */
+header, footer {
+  background: rgba(10,10,30,0.8);
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 20px;
+  position: relative;
+  z-index:2;
+  border-bottom: 2px solid cyan;
+}
+header .logo { height:60px; }
+footer { border-top:2px solid cyan; text-align:center; margin-top:20px; }
+
+/* Dark Mode icon */
+.dark-mode-btn {
+  font-size:1.5em;
+  cursor:pointer;
+  transition: transform 0.3s;
+}
+.dark-mode-btn:hover { transform: rotate(20deg); }
+
+/* Introducción */
+.intro {
+  text-align:center;
+  margin:20px;
+}
+.intro h1 { font-size:2em; margin-bottom:10px; color:cyan; text-shadow:1px 1px 3px black; }
+.intro p { font-size:1.1em; color:white; text-shadow:1px 1px 2px black; }
+
+/* Favoritos sobresalientes */
+.favorites-section {
+  margin: 20px auto;
+  text-align: center;
+  background: rgba(0,0,0,0.2);
+  padding: 20px 10px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Título favoritos */
+.favorites-section h2 {
+  display: inline-block;
+  padding: 5px 15px;
+  font-size:1.5em;
+  color: cyan;
+  border:2px solid cyan;
+  border-radius:10px;
+  background-color: rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 3px black;
+}
+
+/* Favoritos scroll horizontal */
+.favorites-container {
+  display:flex;
+  overflow-x:auto;
+  gap:10px;
+  padding:10px;
+  justify-content:center;
+}
+.favorites-container::-webkit-scrollbar { height:6px; }
+.favorites-container::-webkit-scrollbar-thumb { background:cyan; border-radius:3px; }
+
+/* Buscador */
+.search {
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:20px;
+}
+.search input { padding:5px; width:200px; border-radius:5px; border:1px solid cyan; background:#111; color:white; }
+.search select, .search button { padding:5px 10px; cursor:pointer; border-radius:5px; border:1px solid cyan; background:#222; color:white; transition: transform 0.2s; }
+.search select:hover, .search button:hover { transform: scale(1.05); }
+
+/* Tarjetas */
+.hero-container {
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+  padding:20px;
+}
+.hero-card {
+  position:relative;
+  border-radius:10px;
+  overflow:hidden;
+  cursor:pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color:#111;
+  border: 2px solid cyan; /* default */
+  color:white;
+}
+
+/* Bordes por alineación */
+.hero-card.good { border-color: cyan; box-shadow: 0 0 10px cyan; }
+.hero-card.bad { border-color: fuchsia; box-shadow: 0 0 10px fuchsia; }
+.hero-card.neutral { border-color: gold; box-shadow: 0 0 10px gold; }
+
+/* Hover animado con resplandor */
+.hero-card:hover { transform:scale(1.05); }
+.hero-card.good:hover { box-shadow: 0 0 25px cyan; }
+.hero-card.bad:hover { box-shadow: 0 0 25px fuchsia; }
+.hero-card.neutral:hover { box-shadow: 0 0 25px gold; }
+
+/* Imagen y título de tarjeta */
+.hero-card img { width:100%; height:250px; object-fit:cover; }
+.hero-card h3 { text-align:center; margin:10px 0; font-size:1.1em; }
+
+/* Botón favorito */
+.favorite-btn {
+  position:absolute;
+  top:5px;
+  right:5px;
+  font-size:20px;
+  color:yellow;
+  cursor:pointer;
+}
+
+/* Paginación */
+.pagination {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+  margin:20px;
+}
+.pagination button, .pagination select {
+  padding:5px 10px;
+  cursor:pointer;
+  border-radius:5px;
+  border:1px solid cyan;
+  background:#222;
+  color:white;
+  transition: transform 0.2s;
+}
+.pagination button:hover, .pagination select:hover { transform:scale(1.05); }
+
+/* Modal */
+.modal {
+  position:fixed;
+  top:0; left:0;
+  width:30%; height:20%;
+  background: rgba(0,0,0,0.8);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:10;
+}
+.modal.hidden { display:none; }
+.modal-content {
+  background:#222;
+  color:white;
+  padding:20px;
+  border-radius:10px;
+  max-width:600px;
+  width:90%;
+  position:center;
+}
+#closeModal {
+  position:absolute;
+  top:5px;
+  right:10px;
+  font-size:24px;
+  cursor:center;
+}
+
+/* Cursor personalizado */
+.custom-cursor {
+  width:25px; height:25px;
+  border:2px solid cyan;
+  border-radius:50%;
+  position:fixed;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  transition: transform 0.1s linear;
+  z-index:10000;
+}
+
+/* Dark mode styles */
+body.dark {
+  background-color:#0b0c10;
+  color:white;
+}
+body.dark .search input,
+body.dark .search select,
+body.dark .search button,
+body.dark .pagination button,
+body.dark .pagination select {
+  background:#111;
+  color:white;
+  border:1px solid cyan;
+}
