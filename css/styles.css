@@ -158,36 +158,9 @@ footer { border-top:2px solid cyan; text-align:center; margin-top:20px; }
   color:white;
   transition: transform 0.2s;
 }
-.pagination button:hover, .pagination select:hover { transform:scale(1.05); }
+.pagination button:hover, .pagination select:hover { transform:scale(1.05); 
+}
 
-/* Modal */
-.modal {
-  position:fixed;
-  top:0; left:0;
-  width:30%; height:20%;
-  background: rgba(0,0,0,0.8);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:10;
-}
-.modal.hidden { display:none; }
-.modal-content {
-  background:#222;
-  color:white;
-  padding:20px;
-  border-radius:10px;
-  max-width:600px;
-  width:90%;
-  position:center;
-}
-#closeModal {
-  position:absolute;
-  top:5px;
-  right:10px;
-  font-size:24px;
-  cursor:center;
-}
 
 /* Cursor personalizado */
 .custom-cursor {
@@ -215,3 +188,160 @@ body.dark .pagination select {
   color:white;
   border:1px solid cyan;
 }
+
+/* ================================
+   MODAL — SuperHero ADA
+   ================================ */
+
+   .modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+  
+    /* Centro real */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    padding: 16px;
+    z-index: 9999;
+  }
+  
+  .modal.hidden {
+    display: none;
+  }
+  
+  /* Caja principal */
+  .modal-content {
+    background: #0b0c10;
+    width: 100%;
+    max-width: 1100px;
+    max-height: 90vh;
+  
+    overflow-y: auto;
+    border-radius: 18px;
+    padding: 20px;
+  
+    position: relative;
+    animation: modalPop 0.3s ease-out;
+  }
+  
+  /* Bordes según alineación */
+  .modal-content.good {
+    border: 3px solid cyan;
+    box-shadow: 0 0 30px cyan;
+  }
+  
+  .modal-content.bad {
+    border: 3px solid fuchsia;
+    box-shadow: 0 0 30px fuchsia;
+  }
+  
+  .modal-content.neutral {
+    border: 3px solid gold;
+    box-shadow: 0 0 30px gold;
+  }
+  
+  /* Animación */
+  @keyframes modalPop {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Layout interno */
+  .modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+  
+  /* Imagen */
+  .modal-poster img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 0 20px black;
+  }
+  
+  /* Texto */
+  .modal-info h2 {
+    color: cyan;
+    margin-bottom: 10px;
+  }
+  
+  .modal-info p {
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  
+  /* Stats */
+  .stats .stat {
+    margin-bottom: 10px;
+  }
+  
+  .bar {
+    background: #222;
+    height: 8px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .bar div {
+    height: 100%;
+    background: linear-gradient(90deg, cyan, fuchsia);
+  }
+  
+  /* Botón cerrar */
+  #closeModal {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  /* ================================
+     Responsive
+     ================================ */
+  
+  /* Tablets */
+  @media (max-width: 768px) {
+    .modal-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .modal-content {
+      max-width: 95%;
+    }
+  }
+  
+  /* Móviles XS */
+  @media (max-width: 480px) {
+    .modal-content {
+      padding: 14px;
+      border-radius: 14px;
+    }
+  
+    .modal-info h2 {
+      font-size: 1.3rem;
+    }
+  }
+  
+  /* Móviles XXS (iPhone SE, etc) */
+  @media (max-width: 360px) {
+    .modal-content {
+      padding: 10px;
+    }
+  
+    .modal-info h2 {
+      font-size: 1.1rem;
+    }
+  }
+  

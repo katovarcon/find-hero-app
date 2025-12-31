@@ -115,6 +115,7 @@ En PC, el puntero se convierte en una mira futurista que sigue el mouse, reforza
 - Git + GitHub
 
 ## 🗂️ Estructura del proyecto
+
 HERO-FINDER/
 │
 ├── assets/
@@ -157,16 +158,27 @@ Open with Live Server
 Este proyecto cumple y supera todos los requisitos:
 
 ✅ Búsqueda funcional
+
 ✅ Ordenamiento
+
 ✅ Paginación real
+
 ✅ Selector de páginas
+
 ✅ Estado de botones
+
 ✅ Persistencia al usar modales
+
 ✅ Favoritos con LocalStorage
+
 ✅ Dark Mode
+
 ✅ Responsive
+
 ✅ UI temática
+
 ✅ Fondo animado
+
 ✅ UX cuidada
 
 ## 👩‍💻 Autora
